@@ -1,4 +1,4 @@
-exports.getEditDistance = function (a, b) {
+getEditDistance = function (a, b) {
   if (a.length == 0) return b.length;
   if (b.length == 0) return a.length;
 
@@ -31,3 +31,21 @@ exports.getEditDistance = function (a, b) {
 
   return matrix[b.length][a.length];
 };
+
+// Reports what names are within cutoff distance of similarity to the target name
+getCloseNames = function (targetName, cutoff) {
+  const names = require('./all-names');
+  let results = [];
+  for (let i = 0; i < names.names.length; i++) {
+    let currentName = names.names[i];
+    // console.log(`Name: ${currentName}`);
+    let distance = getEditDistance(currentName, targetName);
+
+    if (distance < cutoff) {
+      results.push(currentName);
+    }
+  }
+  return results;
+}
+
+module.exports = { getCloseNames, getEditDistance }

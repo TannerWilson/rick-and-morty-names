@@ -1,4 +1,13 @@
-<form action="/name" method="POST">
+<form action="/nameSearch" method="POST">
   <input type="text" placeholder="name" name="name">
-  <button type="submit">Submit</button>
+  <button type="submit">Search Name</button>
+</form>
+<form action="/closeNames" method="POST">
+  <input type="text" placeholder="name" name="name">
+  <input type="text" placeholder="Closeness (1-10)" name="closeness">
+  <button type="submit">Get Alike Names</button>
+</form>
+<form action="/insertName" method="POST">
+  <input type="text" placeholder="name" name="name">
+  <button type="submit">Insert Name</button>
 </form>

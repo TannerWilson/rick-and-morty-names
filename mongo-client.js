@@ -19,6 +19,27 @@ class Mongo {
   async close() {
     await this.client.close();
   }
+
+  async insertDocument(doc, collection) {
+    try {
+      const col = this.db.collection(collection);
+      let result = await col.insertOne(doc);
+      return true;
+    } catch (error) {
+      console.error(`Failed to insert name. ${error}`);
+      return false;
+    }
+  }
+
+  async searchDocument(doc, collection) {
+    try {
+      const col = this.db.collection(collection);
+      const name = await col.findOne(doc);
+      return name;
+    } catch (error) {
+      console.error(`Search failed. ${error}`);
+    }
+  }
 }
 
 module.exports = { Mongo }

@@ -32,7 +32,7 @@ async function storeCharData(mongo, chars) {
 
     // Try to insert into mongo
     try {
-      //let result = await characters.insertOne(doc);
+      let result = await characters.insertOne(doc);
     } catch (error) {
       console.error(`Failed to insert ${char.name}`);
     }
