@@ -13,10 +13,7 @@ When the server is running, open a browser and navigate to localhost:{portNumber
 
   - Search Name: This will search the database for that exact name and report wether it was found or not. Keep in mind that this is case sensitive and will exact match the strings in the database.
 
-  - Get Alike Names: This will take the name inserted and the "closeness value" and it will compare the inputted name against all the names in the database and will report back which names are 
-    within the closeness value edits away from the original. For instance if you input the name "Smith" "5", it will return all the names that are within 5 edits away from being the string "Smith".
-    This includes strings like "Smuth" or "Smithyson" but will also include strings that are of length 5 as any string of length 5 can be changed to "Smith" in 5 edits. This makes for some results 
-    that one might not expect because the two strings seem very different, like "Smith" and "Frank" are 5 edits apart. The algorithm used to compute this difference is called the "Levenshtein distance"
+  - Get Alike Names: This will take the name inserted and the "closeness value" and it will compare the inputted name against all the names in the database and will report back which names are within the closeness value edits away from the original. For instance if you input the name "Smith" "5", it will return all the names that are within 5 edits away from being the string "Smith". This includes strings like "Smuth" or "Smithyson" but will also include strings that are of length 5 as any string of length 5 can be changed to "Smith" in 5 edits. This makes for some results that one might not expect because the two strings seem very different, like "Smith" and "Frank" are 5 edits apart. The algorithm used to compute this difference is called the "Levenshtein distance"
 
   - Insert Name: this allows you to insert any name you want into the database. 
 
